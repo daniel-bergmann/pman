@@ -12,9 +12,8 @@ install: pman
 
 git:
 	@printf "Commit message: "; \
-  read msg; \
-  test -n "$$msg" || { echo "Commit message is required"; exit 1; }; \
-  git add -A; \
-  git commit -m "$$msg"
+	read msg; \
+	test -n "$$msg" || { echo "Commit message is required"; exit 1; }; \
+	git add -A && git commit -m "$$msg" && git push
 
 .PHONY: clean install git
